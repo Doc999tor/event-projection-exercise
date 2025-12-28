@@ -20,7 +20,7 @@ Implement these functions in `src/index.ts`
 
 -   Must be deterministic
 
-1.  `reduceEvents(events: GiftEvent[]): ReduceResult`
+2.  `reduceEvents(events: GiftEvent[]): ReduceResult`
 
 -   Process events in sorted order using `sortEvents`
 
@@ -30,13 +30,13 @@ Implement these functions in `src/index.ts`
 
 -   Return `{ giftsById, warnings }`
 
-1.  `getCancelableGiftIds(result: ReduceResult): string[]`
+3.  `getCancelableGiftIds(result: ReduceResult): string[]`
 
 -   Return giftIds that are cancelable right now
 
 -   Definition: cancelable if `orderStatus` is `CREATED` and gift is not `DELIVERED` and not `CANCELLED`
 
-1.  `getStuckOrderGiftIds(result: ReduceResult, nowIso: string, thresholdMinutes: number): string[]`
+4.  `getStuckOrderGiftIds(result: ReduceResult, nowIso: string, thresholdMinutes: number): string[]`
 
 -   "Stuck" means `orderStatus` is `CREATED` and not cancelled and not delivered
 
